@@ -1,0 +1,39 @@
+from .tools import (
+    mcp_server,
+    set_active_browser_engine,
+    get_active_browser_engine,
+    browser_get_page,
+    browser_get_accessibility_tree,
+    browser_get_form,
+    browser_focus_element,
+    browser_type,
+    browser_click,
+    browser_select,
+    browser_get_value,
+    browser_validate_form,
+    user_get_preferences,
+    user_update_preferences,
+    knowledge_search,
+    audit_log,
+    request_user_confirmation
+)
+
+__all__ = [
+    "mcp_server",
+    "set_active_browser_engine",
+    "get_active_browser_engine",
+    "browser_get_page",
+    "browser_get_accessibility_tree",
+    "browser_get_form",
+    "browser_focus_element",
+    "browser_type",
+    "browser_click",
+    "browser_select",
+    "browser_get_value",
+    "browser_validate_form",
+    "user_get_preferences",
+    "user_update_preferences",
+    "knowledge_search",
+    "audit_log",
+    "request_user_confirmation"
+]
