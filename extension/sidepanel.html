@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AccessBridge Assistant</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header class="ab-header">
+      <h1>AccessBridge</h1>
+      <p id="page-summary" class="ab-sub">Checking this page…</p>
+    </header>
+
+    <main class="ab-main">
+      <section aria-labelledby="conv-heading" class="ab-conv">
+        <h2 id="conv-heading" class="ab-visually-hidden">Conversation</h2>
+        <div id="log" class="ab-log" role="log" aria-live="polite" aria-relevant="additions text"></div>
+      </section>
+
+      <section aria-labelledby="status-heading" class="ab-status">
+        <h2 id="status-heading" class="ab-visually-hidden">Assistant status</h2>
+        <div class="ab-meter">
+          <span class="ab-meter-label">Confidence</span>
+          <progress id="confidence" max="100" value="0" aria-labelledby="status-heading"></progress>
+          <span id="confidence-value">—</span>
+        </div>
+        <p id="decision" class="ab-decision"></p>
+      </section>
+
+      <div id="confirm-bar" class="ab-confirm" hidden>
+        <p id="confirm-text"></p>
+        <div class="ab-confirm-actions">
+          <button id="confirm-yes" type="button" class="ab-btn ab-btn-primary">Yes, go ahead</button>
+          <button id="confirm-no" type="button" class="ab-btn">No, cancel</button>
+        </div>
+      </div>
+    </main>
+
+    <form id="composer" class="ab-composer">
+      <label for="message" class="ab-label">What should I do on this page?</label>
+      <div class="ab-input-row">
+        <textarea
+          id="message"
+          rows="2"
+          placeholder="e.g. My name is Priya Raman"
+          aria-describedby="composer-hint"
+        ></textarea>
+        <button id="mic" type="button" class="ab-btn ab-icon" aria-label="Speak your answer" title="Speak your answer">🎙</button>
+        <button type="submit" class="ab-btn ab-btn-primary">Send</button>
+      </div>
+      <p id="composer-hint" class="ab-hint">
+        Press Enter to send. I always ask before submitting anything.
+      </p>
+    </form>
+
+    <details class="ab-settings">
+      <summary>Settings</summary>
+      <label class="ab-label" for="api-base">AccessBridge server address</label>
+      <input id="api-base" type="url" placeholder="http://127.0.0.1:8000" />
+      <label class="ab-check"><input type="checkbox" id="speak-replies" /> Read replies aloud</label>
+      <label class="ab-check"><input type="checkbox" id="high-contrast" /> High contrast &amp; larger text on this page</label>
+      <button id="rescan" type="button" class="ab-btn">Re-scan this page</button>
+    </details>
+
+    <script src="sidepanel.js"></script>
+  </body>
+</html>
